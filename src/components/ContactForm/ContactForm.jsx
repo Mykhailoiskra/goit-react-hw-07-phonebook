@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 
 // Components
-import { addContact } from "redux/itemsSlice";
+import { addContact } from "redux/actions";
 
 // Other staff
 import s from "./ContactForm.module.css";
