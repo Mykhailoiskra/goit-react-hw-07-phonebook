@@ -1,14 +1,19 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 import Contact from "../Contact/Contact.jsx";
-import { deleteContact } from "redux/actions";
 import { getFilteredContacts } from "redux/selectors";
+import { fetchContacts, deleteContact } from "redux/operations";
 
 import s from "./ContactList.module.css";
 
 const ContactList = () => {
   const contacts = useSelector(getFilteredContacts);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
 
   return (
     <ul className={s.contactList}>
@@ -19,6 +24,7 @@ const ContactList = () => {
             number={number}
             onDelete={() => {
               dispatch(deleteContact(id));
+              dispatch(fetchContacts());
             }}
           />
         </li>

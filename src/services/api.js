@@ -11,9 +11,9 @@ export function deleteContact(contactId) {
   return axios.delete(`/contacts/${contactId}`);
 }
 
-export function updateContact(contactId, update) => {
-    return axios.patch(`/contacts/${contactId}`, update).then(({ data }) => data);
+export function updateContact(contactId, update) {
+  return axios.patch(`/contacts/${contactId}`, update).then(({ data }) => data);
 }
-export function fetchContacts()  {
-    return axios.get('/contacts').then(({ data }) => data);
+export function fetchContacts() {
+  return axios.get("/contacts").then(({ data }) => data);
 }

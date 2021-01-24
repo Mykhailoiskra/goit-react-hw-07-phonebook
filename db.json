@@ -1,9 +1,19 @@
 {
   "contacts": [
     {
-      "name": "Mykhailo",
-      "number": "0000334400",
-      "id": 1
+      "name": "Barbara James",
+      "number": "0103104",
+      "id": 5
+    },
+    {
+      "name": "Mykhailo Iskra",
+      "number": "0103104",
+      "id": 6
+    },
+    {
+      "name": "John Smith",
+      "number": "0103104",
+      "id": 7
     }
   ]
 }
