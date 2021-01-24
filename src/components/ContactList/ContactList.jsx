@@ -13,7 +13,8 @@ const ContactList = () => {
 
   useEffect(() => {
     dispatch(fetchContacts());
-  }, [dispatch]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <ul className={s.contactList}>
@@ -24,7 +25,6 @@ const ContactList = () => {
             number={number}
             onDelete={() => {
               dispatch(deleteContact(id));
-              dispatch(fetchContacts());
             }}
           />
         </li>

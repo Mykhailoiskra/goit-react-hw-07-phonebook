@@ -1,6 +1,7 @@
 // Libraries
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getItems } from "redux/selectors";
 
 // Components
 import { addContact } from "redux/operations";
@@ -11,6 +12,7 @@ import s from "./ContactForm.module.css";
 export default function ContactForm() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const contacts = useSelector(getItems);
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
@@ -29,6 +31,10 @@ export default function ContactForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (contacts.find((contact) => contact.name === name)) {
+      return alert(`${name} is already in the list`);
+    }
+
     dispatch(addContact({ name, number }));
     reset();
   };

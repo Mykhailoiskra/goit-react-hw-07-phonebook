@@ -12,11 +12,6 @@ export const fetchContacts = createAsyncThunk(
 export const addContact = createAsyncThunk(
   "contacts/addContact",
   async (contact) => {
-    // const contacts = await phoneBookApi.fetchContacts();
-    // if (contacts.find((item) => item.name === contact.name)) {
-    //   alert(`${contact.name} is already in the list`);
-    //   return;
-    // }
     return await phoneBookApi.addContact(contact);
   }
 );
@@ -24,6 +19,7 @@ export const addContact = createAsyncThunk(
 export const deleteContact = createAsyncThunk(
   "contacts/deleteContact",
   async (id) => {
-    return await phoneBookApi.deleteContact(id);
+    await phoneBookApi.deleteContact(id);
+    return id;
   }
 );

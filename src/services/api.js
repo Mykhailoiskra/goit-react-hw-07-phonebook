@@ -1,7 +1,6 @@
 import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:1234";
-axios.defaults.headers.post["Content-Type"] = "application/json";
 
 export function addContact(contact) {
   return axios.post("/contacts", contact).then(({ data }) => data);
